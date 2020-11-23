@@ -1,4 +1,4 @@
 # Locky Lows
-## Where themost unlikables get the most rewards!
+## Where the most unlikables get the most rewards!
 ---
-###Concept:
+### Concept:
