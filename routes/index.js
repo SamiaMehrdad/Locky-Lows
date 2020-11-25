@@ -20,7 +20,7 @@ router.get('/oauth2callback', passport.authenticate(
   {
     successRedirect : '/logged', // where do you want the client to go after you login 
     //TODO: check this
-    failureRedirect : '/loggqqed' // where do you want the client to go if login fails
+    failureRedirect : '/logerr' // where do you want the client to go if login fails
   }
 ));
 

@@ -13,6 +13,7 @@ var userSchema = new mongoose.Schema(
         role: String,
         nickname: String,
         isActive: Boolean,
+        isNewbe: Boolean,
     },
     {timestamps: true}
 )

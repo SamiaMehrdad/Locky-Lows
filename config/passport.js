@@ -17,27 +17,10 @@ passport.use(new GoogleStrategy(
     {
       if(err) return cb(err);
       if(user)
-        return cb(null, user);
+        updateUser( profile, cb, user );
       else
-        {
-          let now = new Date();
-          const newUser = new User({
-            name: profile.displayName,
-            email: profile.emails[0].value,
-            googleId: profile.id,
-            avatar: profile.photos[0].value,
-            points: 1000,
-            role: "free",
-            joinDate: now,
-            lastJoin: now,
-            nickname: ""
-          });
-         newUser.save( (err) => 
-         {
-           if (err) return cb(err);
-           return cb(null, newUser);
-         }); 
-        }  
+        saveNewUser( profile, cb );
+
     });
   }
 ));
@@ -54,3 +37,45 @@ passport.deserializeUser(function(id, done) {
       return done(err, user);
     });
 });
+
+/*
+*
+* set lastJoin to now, isNewbe to false,
+*/
+function updateUser (profile, cb, user)
+{
+  user.lastJoin = new Date();
+  user.isNewbe = false;
+  user.save( (err) => 
+  {
+    if (err) return cb(err);
+    return cb(null, user);
+  }); 
+
+}
+
+/*
+* 
+*
+*/
+function saveNewUser(profile,cb)
+{
+  let now = new Date();
+  const newUser = new User({
+    name: profile.displayName,
+    email: profile.emails[0].value,
+    googleId: profile.id,
+    avatar: profile.photos[0].value,
+    points: 1000,
+    role: "free",
+    joinDate: now,
+    lastJoin: now,
+    nickname: "",
+    isNewbe: true,
+  });
+ newUser.save( (err) => 
+ {
+   if (err) return cb(err);
+   return cb(null, newUser);
+ }); 
+}
