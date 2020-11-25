@@ -10,7 +10,13 @@ body{
   font-family: 'Lucida Sans', 'Lucida Sans Regular','Lucida Sans Unicode', Verdana, sans-serif;
   font-size: min(16px , 1.2vw);
 }
- 
+.material-icons{
+  position: absolute;
+  vertical-align: top;
+  left: 20%;
+
+}
+
 #left-panel{
   position: fixed;
   display: block;
@@ -18,7 +24,7 @@ body{
   height: 100%;
   background-color: var(--dark);
   z-index: 20;
-  
+  text-align: center;
 }
 .logo{
   color:var(--light);
@@ -27,11 +33,9 @@ body{
   font-size: calc(20px + 10vh);
   position: inherit;
   display: block;
-  /* left: max(150px , 25%); */
   left: max( 100px , calc( 30% - 180px + 5vh) );
-  top: 45vh;
+  top: 50vh;
   text-shadow: 5px 5px 20px rgba(0,0,0,.1);
-
 }
 
 .guest{
@@ -41,6 +45,7 @@ body{
 .guest:hover{
   letter-spacing: 14px;
   text-shadow: 5px 10px 30px rgba(0,0,0,.5);
+  top: 40vh;
 }
 #right-wrapper{
   display: inline-block;
@@ -71,9 +76,9 @@ body{
   display: inline-block;
   position: relative;
   top: 460px;
-  left: 135px;
+  left: 70px;
   z-index: 100;
-  filter: drop-shadow(0 0 5px #333);
+  filter: drop-shadow(0 0 2px #775);
 }
 #login-wrapper{
   display: inline-block;
@@ -108,7 +113,6 @@ body{
 }
 
 .light{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--light);
 }
 #logout{
@@ -117,7 +121,6 @@ position: absolute;
 top: 30px;
 left: 30px;
 color:var(--light);
-/* font-size: 20px; */
 }
 #logout:hover{
   color: var(--hilight);
@@ -131,14 +134,18 @@ color:var(--light);
   right: 15%;
   width: 40%;
 }
-#brief-info{
+.info{
   display: inline-block;
-  position: absolute;
+  position: relative;
   text-align: center;
   color: var(--light);
-  bottom: 35%;
-  width: 30%;
-  left: 35%;
+  overflow: hidden;
+  padding: 0 10%;
+
+}
+#brief-info{
+  margin: 70% 0 10% 0;
+  text-align: right;
 }
 #brief-info p{
   margin: 5px 0;
@@ -146,8 +153,12 @@ color:var(--light);
 #brief-info p:hover{
   color: #7aa;
 }
+
+#messages{
+
+}
 #fader{
-  /* background-color: var(--back); */
+
   background-image: linear-gradient(var(--back), var(--back),  rgb(0,0,0,0));
   position: fixed;
   font-size: min(24px , 1.7vw);
@@ -158,3 +169,14 @@ color:var(--light);
   height: 60%;
   z-index: 2;
 }
+#top-slogan{
+  display: inline-block;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  color: var(--dark);
+  right: 5vw;
+  position: absolute;
+  width: 90%;
+  font-size: 2vw;
+}
+
