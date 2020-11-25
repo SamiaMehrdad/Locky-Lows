@@ -1,9 +1,11 @@
 var router = require('express').Router();
-const passport = require('passport');
+var passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
   // Where do you want to go for the root route
+  console.log("REACH index page ***************");
+  res.render("index", {});
 });
 
 // Google OAuth login route
@@ -16,8 +18,9 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/', // where do you want the client to go after you login 
-    failureRedirect : '/' // where do you want the client to go if login fails
+    successRedirect : '/logged', // where do you want the client to go after you login 
+    //TODO: check this
+    failureRedirect : '/loggqqed' // where do you want the client to go if login fails
   }
 ));
 
