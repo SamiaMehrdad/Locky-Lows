@@ -6,8 +6,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
-var indexRouter = require('./routes/index');
-var loggedRouter = require('./routes/logged');
+
 // load the env vars
 require('dotenv').config();
 
@@ -43,8 +42,10 @@ app.use(passport.session());
 
 
 // mount all routes with appropriate base paths
-app.use('/', indexRouter);
-app.use('/', loggedRouter);
+app.use('/', require('./routes/index') );
+app.use('/', require('./routes/dashboard') );
+app.use('/', require('./routes/myrounds') )
+app.use('/', require('./routes/settings') )
 
 // invalid request, send 404 page
 app.use(function(req, res) {

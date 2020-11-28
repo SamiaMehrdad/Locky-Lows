@@ -1,9 +1,8 @@
 var router = require('express').Router();
-var loggedCtrl = require('../controllers/logged');
+var dashboardCtrl = require('../controllers/dashboard');
 
-// GET /logged
-//TODO: check this
-router.get('/logged', loggedCtrl.index);
+// GET /dashboard
+router.get('/dashboard', dashboardCtrl.index);
 
 // POST /facts
 // We will already have access to the logged in student on

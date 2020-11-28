@@ -1,6 +1,18 @@
 const mongoose = require('mongoose');
 const user = require("./user");
 
+var subjectSchema = new mongoose.Schema(
+    {
+       title: String,
+       url: String,
+       index: Number, // for casting images with numbers
+       backColor: String, // hex value as string from colorpicker
+       textColor: String,
+      // touchers: [user],
+      // stackholders: [betSchema],      
+    },
+    {timestamps: true}
+);
 // User Model
 var roundSchema = new mongoose.Schema(
     {
@@ -16,14 +28,6 @@ var roundSchema = new mongoose.Schema(
     {timestamps: true}
 );
 
-var subjectSchema = new mongoose.Schema(
-    {
-       name: String,
-       url: String,
-       index: Number, // for casting images with numbers
-       touchers: [userSchema],
-      // stackholders: [betSchema],      
-    }
-);
+
 
 module.exports = mongoose.model("Round", roundSchema);

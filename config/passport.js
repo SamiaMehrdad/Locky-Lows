@@ -15,9 +15,10 @@ passport.use(new GoogleStrategy(
   console.log(profile,"<==RETURN TO PASSPORT.JS");
   User.findOne({googleId: profile.id}, (err, user) =>
     {
-      if(err) return cb(err);
+      if(err) 
+        return cb(err);
       if(user)
-        updateUser( profile, cb, user );
+        updateUser( user, cb );
       else
         saveNewUser( profile, cb );
 
@@ -39,10 +40,10 @@ passport.deserializeUser(function(id, done) {
 });
 
 /*
-*
+* Known user logged in
 * set lastJoin to now, isNewbe to false,
 */
-function updateUser (profile, cb, user)
+function updateUser ( user, cb )
 {
   user.lastJoin = new Date();
   user.isNewbe = false;
@@ -55,8 +56,8 @@ function updateUser (profile, cb, user)
 }
 
 /*
-* 
-*
+* New user logged in
+* initialize and save user data
 */
 function saveNewUser(profile,cb)
 {

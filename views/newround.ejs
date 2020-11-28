@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locky Lows. Like less likables to win.</title>
+    <link rel="icon" href="/images/ll.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="/JS/ll.js"></script>
+</head>
+<body>
+    <div  id = "long-text">
+    </div>
+    <div id = "left-panel">
+        <h1 class = "logo"> LUCKY LOWS</h1>
+
+        <div id = "brief-info" class ="info">
+
+        </div>
+    </div> 
+            <div id = "messages" class ="info mid">
+            <p>Make a new 'LUCKY LOWS ROUND'<br><br>
+            Please specify a name and number of subjects you like to be in your round.
+            </p>
+            <br>
+            <form action="./studio" method="POST"> 
+            <label> Title of round :<input type="text" name="title" class="inputs"></label><br><br>
+            <label> Total subjects :<input type="number" name="totalItems" class="inputs" min="6" default="6"></label><br><br>
+            <label> Labeling offset:<input type="number" name="labelOffset" class="inputs" default="0"></label><br><br>
+            <button type = "submit" class="clickable btn">GO</button>
+            </form>
+            <!-- <p><button id="launch" class="clickable btn" action = "submit">
+                Launch</button></p><br> -->
+        </div> 
+</body>
+</html>
