@@ -4,7 +4,7 @@ var passport = require('passport');
 // The root route renders our only view
 router.get('/', function(req, res) {
   // Where do you want to go for the root route
-  console.log("REACH index page ***************");
+  // console.log("REACH index page ***************");
   res.render("index", {});
 });
 
@@ -20,7 +20,7 @@ router.get('/oauth2callback', passport.authenticate(
   {
     successRedirect : '/dashboard', // where do you want the client to go after you login 
     //TODO: check this
-    failureRedirect : '/logerr' // where do you want the client to go if login fails
+    failureRedirect : '/' // where do you want the client to go if login fails
   }
 ));
 

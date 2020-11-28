@@ -7,14 +7,15 @@
     <link rel="icon" href="/images/ll.png">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script defer src="/JS/ll.js"></script>
 </head>
 <body>
     <div  id = "long-text">
     </div>
     <div id = "left-panel">
         <h1 class = "logo"> LUCKY LOWS</h1>
-
+        <div class = "top-info" > Your LLcoins balance : 
+            <p style = "font-size: 1.3vw; "> <%= balance %> </p>
+        </div>
         <div id = "brief-info" class ="info">
         <p>You can make and run as many 'Lucky Lows Rounds' as you want.
         At the right you can find a brief list of all of your Rounds.
@@ -22,7 +23,7 @@
         To start builing a 'Lucky Lows Round', just press 'New' button.
         </p>
         <br><br><br>
-            <p><a id="new" class="clickable btn" href="/myrounds/new">
+            <p><a id="new" class="clickable btn" href="/mystudio/new">
               New</a></p><br>
             <p><a id="back" class="clickable btn" href="/dashboard">
               Back </a></p>

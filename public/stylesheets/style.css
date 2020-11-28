@@ -12,6 +12,7 @@ body{
 }
 a{
   color: #59b;
+  padding: 2.5vh 0 0;
 }
 p .material-icons{
   position: absolute;
@@ -128,12 +129,12 @@ p .material-icons{
 }
 
  .btn{
+  color: #59b;
   text-decoration: none;
   background-color: rgba(120,200,220,.3);
   width: 7vw;
   height: 5vh;
   display: inline-block;
-  padding: 2.5vh 0 0;
   box-shadow: 3px 6px 20px #000;
   border-radius: 1vw;
   border: 1px solid #478;
@@ -306,7 +307,7 @@ color:var(--light);
 .make-subject-main{
     font-size: calc( 8px + 1.6vw);
     line-height: 1.6vw;
-    color: red;
+    color: #aa8800;
     text-align: center;
     width: 90%;
     height: 55%;
@@ -358,4 +359,10 @@ height: 40%;
 bottom: 1vh;
 position: absolute;
 width: 100%;
+}
+
+.top-info{
+  position: absolute;
+  top: 10vh;
+  width: 100%;
 }

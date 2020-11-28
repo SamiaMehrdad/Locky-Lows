@@ -3,7 +3,7 @@ const user = require("./user");
 
 var subjectSchema = new mongoose.Schema(
     {
-       title: String,
+       text: String,
        url: String,
        index: Number, // for casting images with numbers
        backColor: String, // hex value as string from colorpicker
@@ -16,6 +16,7 @@ var subjectSchema = new mongoose.Schema(
 // User Model
 var roundSchema = new mongoose.Schema(
     {
+        owner: String,
         title: String,
         fee: { type: Number, default: 10}, // LLpoints fee to join this room
         start: Date,     // the moment that this room starts

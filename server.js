@@ -44,8 +44,9 @@ app.use(passport.session());
 // mount all routes with appropriate base paths
 app.use('/', require('./routes/index') );
 app.use('/', require('./routes/dashboard') );
-app.use('/', require('./routes/myrounds') )
-app.use('/', require('./routes/settings') )
+app.use('/', require('./routes/mystudio') );
+app.use('/', require('./routes/settings') );
+// app.use('/', require('./routes/myrounds') );
 
 // invalid request, send 404 page
 app.use(function(req, res) {

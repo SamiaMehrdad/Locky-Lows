@@ -1,8 +1,5 @@
 
 
-//BUG: each subject should be touched first,
-// otherwise it's color will be set to prev color picker!!
-//BUG related: selcted elemnt is undefined
 
 /*--------------------- cache elements -----------------------------------*/
 const studioSubjects = document.querySelectorAll(".make-subject-main");
@@ -15,7 +12,7 @@ const launchBtn = getElemById("launch-btn");
 const roundTitle = getElemById("round-title").innerText.split(' ')[0];
 const roundTotalItems = studioSubjects.length;
 /*------------------------ consts -----------------------------------------*/
-const defColor = "#ff0000";
+const defColor = "#aa8800";
 const defBackColor = "#647896";
 /*---------------------- global variables ---------------------------------*/
 let selectedElem = "";
@@ -29,7 +26,7 @@ setEvent("prop-close", "click", propClose );
 setEvent("launch-btn", "click", submit );
 studioSubjects.forEach(element => { 
     setEvent(element.id, "click", subjectClicked );
-    //console.log(element.innerText);
+
 });
 
 
@@ -51,11 +48,9 @@ allSubjModels.push(
       text: element.innerText,
       backColor: defBackColor,
       textColor: defColor
-
   });
  });
 
- console.log(allSubjModels," ***ALL models in init");
 }
 
 /**-----------------------------
@@ -72,6 +67,7 @@ function submit()
   counter:getElemById("counter").value,
   subjects: allSubjModels
   };
+  console.log("POSTING-->", payload, " TO /launch");
   post( "./launch", payload);
 }
 /**-----------------------------
@@ -95,7 +91,6 @@ function propClose()
 function subjectClicked(e)
 {
   selectedElem = getElemById(e.target.id);
- // console.log(selectedElem, "SELECTED");
   setPropPanelEl.classList.remove("hidden");
 
   studioSubjects.forEach(element => 
@@ -107,8 +102,6 @@ function subjectClicked(e)
    setPropTitleEl.innerText = "Subject No."+ index;
    index = parseInt(index)-1;
    subjectTextEl.value = allSubjModels[ index ].text;
-   //console.log(e.target.style.backgroundColor, typeof(e.target.style.backgroundColor));
-    // console.log(allSubjModels[index].backColor,"<==== backColor");
    subjectsBackEl.value = allSubjModels[index].backColor;
    subjectsColorEl.value = allSubjModels[index].textColor;
 }
@@ -121,8 +114,6 @@ function updateSubject()
 {
     
     let index = parseInt( selectedElem.parentNode.innerText.split(')')[0])-1 ;
-    console.log("something changed for #", index); 
-    console.log("CHANGE ELEM : ", allSubjModels[ index ]);
     allSubjModels[ index ].text = subjectTextEl.value;
     allSubjModels[ index ].textColor = subjectsColorEl.value;
     allSubjModels[ index ].backColor = subjectsBackEl.value;

@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var settingsCtrl = require('../controllers/settings');
 
-// GET /myrounds
+// GET /mystudio
 router.get('/settings', settingsCtrl.index);
 
 
