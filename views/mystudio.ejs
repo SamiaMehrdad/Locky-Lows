@@ -10,6 +10,21 @@
 </head>
 <body>
     <div  id = "long-text">
+        <table id="rounds-table">
+            <tr>
+                <th>Title</th><th>Create</th><th>To Run</th><th>Count down</th><th>Population</th>
+            </tr>
+            <% rounds.forEach((round, index) => { %>
+            <tr> 
+              <td><%= round.title %></td>
+              <td><%= starts[index] %></td>
+              <td><%= round.counter < 0 ? "Loop":round.counter %></td>
+              <td><%= CDTs[index] %></td>
+              <td><%= round.Population %></td>
+              <td><button class="clickable">X</button></td>
+            </tr>   
+            <% }); %>
+        </table>
     </div>
     <div id = "left-panel">
         <h1 class = "logo"> LUCKY LOWS</h1>
@@ -18,9 +33,9 @@
         </div>
         <div id = "brief-info" class ="info">
         <p>You can make and run as many 'Lucky Lows Rounds' as you want.
-        At the right you can find a brief list of all of your Rounds.
-        <br>
-        To start builing a 'Lucky Lows Round', just press 'New' button.
+            At the right you can find a brief list of all of your Rounds.
+            <br>
+            To start builing a 'Lucky Lows Round', just press 'New' button.
         </p>
         <br><br><br>
             <p><a id="new" class="clickable btn" href="/mystudio/new">

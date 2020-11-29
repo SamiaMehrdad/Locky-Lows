@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
-
+const Schema = mongoose.Schema;
 // User Model
-var userSchema = new mongoose.Schema(
+var userSchema = new Schema(
     {
         name: String,
         email: String,
         avatar: String,
         googleId: String,
-        points: Number,     // LLpoints can goes negative too
+        coins: Number,     // LLcoins can goes negative too
         joinDate: Date,     // useful for tracking user loyalty
         lastJoin: Date,
         role: String,

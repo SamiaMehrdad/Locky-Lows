@@ -1,5 +1,5 @@
 :root {
-  --dark: #122; --hilight: #fb0; --light: #689;
+  --dark: #122; --hilight: #d90; --light: #689;
   --back: #ddd; 
 }
 body{
@@ -244,11 +244,11 @@ color:var(--light);
   text-align: left;
 }
  .sticker{
-  /* border: 1px solid red; */
+  font-size: min(16px , 1.2vw);
   display: inline-block;
   width: calc(40px + 9vw);
   height: calc(30px + 8vw);
-  background-image: linear-gradient( 90deg, #000,#011, #045);
+  background-image: linear-gradient( 90deg, #122,#344, #689);
   border-radius: 0 0 4vw 0;
   box-shadow: 5px 10px 20px #000;
   margin: 1%;
@@ -260,14 +260,19 @@ color:var(--light);
    /* border: 2px solid var(--hilight); */
    box-shadow: 0 0 2vw rgba(255,255,0,.5);
  }
+ #rooms-container > .sticker{
+   background-image: linear-gradient( 90deg, #000,#011, #045);
+ } 
  #sticker-info{
    margin: 2vw;
+   line-height: 2vh;
  }
  #sticker-info p{
    margin: 0;
  }
  #sticker-timer{
    color: #094;
+  line-height: .7vh;
  }
  #label1{
    font-size: 10px;
@@ -355,7 +360,7 @@ color:var(--light);
 }
 
 #bottom-panel{
-height: 40%;
+height: 50%;
 bottom: 1vh;
 position: absolute;
 width: 100%;
@@ -365,4 +370,22 @@ width: 100%;
   position: absolute;
   top: 10vh;
   width: 100%;
+}
+
+#rounds-table{
+  padding: 5px 10px;
+    margin: 10vh 5vw;
+    border: 1px solid;
+    width: 100%;
+    text-align: center;
+      border-collapse: collapse;
+      font-size: 1vw;
+      font-family: arial, sans-serif;
+}
+td, th{
+  border: 1px solid #999;
+}
+
+tr:nth-child(even) {
+  background-color: #cdc;
 }

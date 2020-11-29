@@ -11,15 +11,17 @@
 </head>
 <body>
     <div  id = "long-text">
-    <div id="canvas">
-    
-        <% for( var i=0; i < parseInt(subjects.totalItems); i++) { %>
-        <div class='make-subject-out' >
-            <%= i+1 %>)
-            <div class='make-subject-main' id= 'subj<%= i %>'><%= i+ parseInt(subjects.labelOffset) +1 %> </div>
-        </div> 
-        <% } %>
-    </div>
+        <div id="canvas">
+        
+            <% for( var i=0; i < parseInt(subjects.totalItems); i++) { %>
+            <div class='make-subject-out' >
+                <%= i+1 %>)
+                <div class='make-subject-main' id= 'subj<%= i %>'>
+                    <%= i+ parseInt(subjects.labelOffset) +1 %> 
+                </div>
+            </div> 
+            <% } %>
+        </div>
     </div>
     <div id = "left-panel">
         <div id = "set-prop" class="hidden"><button id="prop-close" class="clickable">X</button><p>  Set properties</p>
@@ -30,23 +32,19 @@
             <label>   Text : <input id="subject-tcolor" type="color" name="textColor" class="inputs" value="#aa8800"></label><br><br>
           </div>  
         </div>
-        
+ 
         <h1 class = "logo"> LUCKY LOWS</h1>
         <h2 id="round-title"><%= subjects.title %> - <%= subjects.totalItems %></h2>
-
         <div id = "bottom-panel">
-        <label>Brief description of this Round : <br><input id="desc" type="text" name="desc" class="inputs"></label><br><br>
-        <label>Participation fee (LLPoints) : <br><input id="fee" type="number" value = "10" name="fee" class="inputs" min="0"></label><br><br><br>
-        <label>Run cycles ( Enter -1 for infinit ) : <br><input id="counter" type="number" value = "10" name="counter" class="inputs" min="0"></label><br><br><br>
-            <button id="launch-btn" class="clickable btn">Launch</button>
+            <label>Brief description of this Round : <br><input id="desc" type="text" name="desc" class="inputs"></label><br>
+            <label>Duration ( Days ) : <br><input id="due" type="number" value = "7" name="due" class="inputs" min="1"></label><br>
+            <label>Participation fee (LLcoins) : <br><input id="fee" type="number" value = "10" name="fee" class="inputs" min="0"></label><br>
+            <label>Run cycles ( Enter -1 for infinit ) : <br><input id="counter" type="number" value = "10" name="counter" class="inputs" min="0"></label><br><br>
+            <button id="launch-btn" class="clickable btn">Launch</button><br><br>
+            <p><a id="cancel" class="clickable" href="/mystudio">
+              Back</a></p>
         </div>
-
     </div> 
-
-
-            <!-- <p><button id="launch" class="clickable btn" action = "submit">
-                Launch</button></p><br> -->
-        </div> 
-        <p id="data-holder" data-subject=<%= subjects %> ></p>
+    <p id="data-holder" data-subject=<%= subjects %> ></p>
 </body>
 </html>

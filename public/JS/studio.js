@@ -16,7 +16,6 @@ const defColor = "#aa8800";
 const defBackColor = "#647896";
 /*---------------------- global variables ---------------------------------*/
 let selectedElem = "";
-
 let allSubjModels = [];
 /*--------------------- event listeners -----------------------------------*/
 setEvent("subject-text", "change", updateSubject );
@@ -29,16 +28,15 @@ studioSubjects.forEach(element => {
 
 });
 
-
 /*----------------------------initialize -------------------------------- */
-makeModel();
-propClose(); 
+makeModel(); // init model
+propClose(); // init view
 
 /*---------------------------- functions -------------------------------- */
 
 /**-----------------------------
 *
-*
+* 
 *---------------------------- */
 function makeModel()
 {
@@ -65,6 +63,7 @@ function submit()
   fee: getElemById("fee").value,
   desc: getElemById("desc").value,
   counter:getElemById("counter").value,
+  due: getElemById("due").value,
   subjects: allSubjModels
   };
   console.log("POSTING-->", payload, " TO /launch");

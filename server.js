@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
-
+var dataCtrl = require('./controllers/index');
 // load the env vars
 require('dotenv').config();
 
@@ -46,11 +46,14 @@ app.use('/', require('./routes/index') );
 app.use('/', require('./routes/dashboard') );
 app.use('/', require('./routes/mystudio') );
 app.use('/', require('./routes/settings') );
-// app.use('/', require('./routes/myrounds') );
+app.use('/', require('./routes/myrounds') );
 
 // invalid request, send 404 page
 app.use(function(req, res) {
   res.status(404).send('Cant find that!');
 });
+
+
+setInterval( dataCtrl.refreshData, 60000);
 
 module.exports = app;

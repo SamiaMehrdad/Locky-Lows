@@ -39,10 +39,10 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-/*
+/**********************************
 * Known user logged in
 * set lastJoin to now, isNewbe to false,
-*/
+**********************************/
 function updateUser ( user, cb )
 {
   user.lastJoin = new Date();
@@ -55,10 +55,10 @@ function updateUser ( user, cb )
 
 }
 
-/*
+/***********************************
 * New user logged in
 * initialize and save user data
-*/
+************************************/
 function saveNewUser(profile,cb)
 {
   let now = new Date();
@@ -67,7 +67,7 @@ function saveNewUser(profile,cb)
     email: profile.emails[0].value,
     googleId: profile.id,
     avatar: profile.photos[0].value,
-    points: 1000,
+    coins: 1000,
     role: "free",
     joinDate: now,
     lastJoin: now,

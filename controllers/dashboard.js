@@ -1,9 +1,12 @@
 
 module.exports = {
   index,
-
 };
 
+/*******************************
+*
+*
+ *******************************/
 function index( req, res, next )
 {
   if(!req.user)
