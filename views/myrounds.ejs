@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locky Lows. Like less likables to win.</title>
+    <link rel="icon" href="/images/ll.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div  id = "long-text">
+        <table id="rounds-table">
+            <tr>
+                <th>Start</th><th>Title</th><th>Count down</th><th>Population</th><th>Rewards</th>
+            </tr>
+            <% rounds.forEach((round, index) => { %>
+            <tr> 
+              <td><%= starts[index] %></td>
+              <td><%= round.title %></td>
+              <td><%= CDTs[index] %></td>
+              <td><%= round.Population %></td>
+              <td>1210</td>
+            </tr>   
+            <% }); %>
+        </table>
+    </div>
+    <div id = "left-panel">
+        <h1 class = "logo"> LUCKY LOWS</h1>
+        <div class = "top-info" > Your LLcoins balance : 
+            <p style = "font-size: 1.3vw; "> <%= balance %> </p>
+        </div>
+        <div id = "brief-info" class ="info">
+        <p>You can find all 'Lucky Lows Rounds' that you've engaged at the right table.<br>
+           Click view link of each round to see more details.
+        </p>
+        <br><br><br>
+            <p><a id="back" class="clickable btn" href="/dashboard">
+              Back </a></p>
+        </div>
+
+        <a id="logout" class="clickable" href="/logout"> logout 
+        </a>
+    </div>  
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locky Lows. Like less likables to win.</title>
+    <link rel="icon" href="/images/ll.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="/JS/room.js"></script>
+</head>
+<body>
+    <div  id = "long-text">
+        <div id="canvas">
+        
+            <% for( var i=0; i < parseInt(subjects.totalItems); i++) { %>
+            <div class='make-subject-out' >
+                <%= i+1 %>)
+                <div class='make-subject-main' id= 'subj<%= i %>'>
+                    <%= i+ parseInt(subjects.labelOffset) +1 %> 
+                </div>
+            </div> 
+            <% } %>
+        </div>
+    </div>
+    <div id = "left-panel">
+        <div id = "set-prop" class="hidden"><button id="prop-close" class="clickable">X</button><p>  Set properties</p>
+         <div style="margin: 2vw;">
+            <p id="set-prop-title"> Subject No. 1<p><br>
+            <label>Text : <input id="subject-text" type="text" name="Title" class="inputs"></label><br><br>
+            <label>Back : <input id="subject-color" type="color" name="backColor" class="inputs" value="#647896"></label>
+            <label>   Text : <input id="subject-tcolor" type="color" name="textColor" class="inputs" value="#aa8800"></label><br><br>
+          </div>  
+        </div>
+ 
+        <h1 class = "logo"> LUCKY LOWS</h1>
+        <h2 id="round-title"><%= subjects.title %> - <%= subjects.totalItems %></h2>
+        <div id = "bottom-panel">
+
+            <label>Run cycles ( Enter -1 for infinit ) : <br><input id="counter" type="number" value = "10" name="counter" class="inputs" min="0"></label><br><br>
+            <button id="launch-btn" class="clickable btn">Launch</button><br><br>
+            <p><a id="cancel" class="clickable" href="/mystudio">
+              Back</a></p>
+        </div>
+    </div> 
+    <p id="data-holder" data-subject=<%= subjects %> ></p>
+</body>
+</html>
