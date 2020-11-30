@@ -2,7 +2,7 @@ var router = require('express').Router();
 var settingsCtrl = require('../controllers/settings');
 
 // GET /mystudio
-router.get('/settings', settingsCtrl.index);
+router.get('/', settingsCtrl.index);
 
 
 function isLoggedIn(req, res, next) {

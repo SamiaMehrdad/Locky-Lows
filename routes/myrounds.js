@@ -2,9 +2,9 @@ var router = require('express').Router();
 var myRoundsCtrl = require('../controllers/myrounds');
 
 // GET /mystudio
-router.get('/myrounds', isLoggedIn, myRoundsCtrl.index);
-router.get('/myrounds/enter', isLoggedIn, myRoundsCtrl.enter);
-router.post('/myrounds/engage', isLoggedIn, myRoundsCtrl.engage);
+router.get('/', isLoggedIn, myRoundsCtrl.index);
+router.get('/enter/:id', myRoundsCtrl.enter);
+router.post('/engage', isLoggedIn, myRoundsCtrl.engage);
 
 
 function isLoggedIn(req, res, next) {

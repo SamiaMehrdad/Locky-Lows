@@ -12,7 +12,7 @@ passport.use(new GoogleStrategy(
   (accessToken, refreshToken, profile, cb) => 
   {
     // a user has logged in via OAuth!
-  console.log(profile,"<==RETURN TO PASSPORT.JS");
+  //console.log(profile,"<==RETURN TO PASSPORT.JS");
   User.findOne({googleId: profile.id}, (err, user) =>
     {
       if(err) 

@@ -1,4 +1,21 @@
 <%- include('./partials/formatter') %>
+    <div id = "rooms-container"> 
+     <% VIPRounds.forEach( vip => { %>
+        <div id="s<%= vip.id %>" class = "sticker">
+            <div class = "sticker-info">
+                <p><%= vip.title %></p>
+                <p><%= vip.population %></p>
+            </div>
+            <div class = "sticker-timer">
+                <p><%= vip.CDT %></p>
+                <p id="label1">DAY      HRS      MNS</p>
+            </div>
+        </div> 
+        <% }); %>
+        <!-- <form action="./myrounds/enter/" method="GET" name="sendform"> -->
+        <a id="sender" ></a>
+        </form>
+    </div>
     <div  id = "long-text">
         <p> <br><br><br><br><br><br><br><br><br>t Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br><br>
         <p> Sed libero enim sed faucibus turpis in. Rutrum tellus pellentesque eu tincidunt tortor. Urna condimentum mattis pellentesque id. Id porta nibh venenatis cras sed.</p><br><br>

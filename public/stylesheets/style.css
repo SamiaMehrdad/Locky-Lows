@@ -263,14 +263,14 @@ color:var(--light);
  #rooms-container > .sticker{
    background-image: linear-gradient( 90deg, #000,#011, #045);
  } 
- #sticker-info{
+ .sticker-info{
    margin: 2vw;
    line-height: 2vh;
  }
- #sticker-info p{
+.sticker-info p{
    margin: 0;
  }
- #sticker-timer{
+ .sticker-timer{
    color: #094;
   line-height: .7vh;
  }

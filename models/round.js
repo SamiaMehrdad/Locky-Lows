@@ -31,7 +31,8 @@ var roundSchema = new Schema(
     {
         title: String,
         fee: { type: Number, default: 10}, // LLcoins fee to join this room
-        start: Date,     // the moment that this room starts
+        start: Date,     // the moment that this intance starts
+        create: Date,   // submitting first of this round
         due: Number,     // duration in days
         CDT: Number,
        // CDT: { type: Number, 
@@ -41,7 +42,7 @@ var roundSchema = new Schema(
         isActive: Boolean,
         subjects: [subjectSchema],
         owner: {type: Schema.Types.ObjectId, ref: "User"}, // user id
-        population: Number,
+        population: {type: Number, default: 0},
         result: resultSchema,
     },
     {timestamps: true}

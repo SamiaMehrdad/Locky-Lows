@@ -3,9 +3,9 @@ var dashboardCtrl = require('../controllers/dashboard');
 
 // GET /dashboard
 router.get('/dashboard', dashboardCtrl.index);
-
+router.get('/dashboard:id', dashboardCtrl.showRound);
 // POST /facts
-// We will already have access to the logged in student on
+// We will already have access to the logged in user on
 // the server, therefore do not use: /students/:id/facts
 
 //router.post('/facts', isLoggedIn, studentsCtrl.addFact);

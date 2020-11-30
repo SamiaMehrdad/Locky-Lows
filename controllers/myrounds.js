@@ -44,7 +44,10 @@ function index( req, res )
  *******************************/
 function enter( req, res )
 {
-    
+  console.clear();
+    console.log(req.params);
+    console.log(req.body);
+    res.send("YOU ENTERED THE ROOM ");
 }
 
 /*******************************

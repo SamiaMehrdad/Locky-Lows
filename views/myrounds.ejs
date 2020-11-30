@@ -10,6 +10,7 @@
 </head>
 <body>
     <div  id = "long-text">
+        <% if(rounds.length) { %>
         <table id="rounds-table">
             <tr>
                 <th>Start</th><th>Title</th><th>Count down</th><th>Population</th><th>Rewards</th>
@@ -24,6 +25,9 @@
             </tr>   
             <% }); %>
         </table>
+        <% } else { %>
+            <br><br><br><p>You do not engaged in any round yet. Try your luck!</p>
+            <% } %>
     </div>
     <div id = "left-panel">
         <h1 class = "logo"> LUCKY LOWS</h1>

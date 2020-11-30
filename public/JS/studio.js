@@ -68,6 +68,7 @@ function submit()
   };
   console.log("POSTING-->", payload, " TO /launch");
   post( "./launch", payload);
+  window.location.href = './';
 }
 /**-----------------------------
 *
