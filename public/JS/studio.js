@@ -1,5 +1,6 @@
+/* CLIENT SIDE for studio
 
-
+*/
 
 /*--------------------- cache elements -----------------------------------*/
 const studioSubjects = document.querySelectorAll(".make-subject-main");
@@ -67,8 +68,8 @@ function submit()
   subjects: allSubjModels
   };
   console.log("POSTING-->", payload, " TO /launch");
-  post( "./launch", payload);
-  window.location.href = './';
+  post( "./launch", payload); // it MUST be ./
+  window.location.href = './'; // it MUST be ./
 }
 /**-----------------------------
 *

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 // User Model
 var sysSchema = new Schema(
     {
-        VIPRounds: [mongoose.Types.ObjectId],
+        VIPRounds: [{ type: mongoose.Types.ObjectId, ref:"Round"}],
     },
     {timestamps: true}
 )

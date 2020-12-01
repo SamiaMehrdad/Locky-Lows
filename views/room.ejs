@@ -10,39 +10,51 @@
     <script defer src="/JS/room.js"></script>
 </head>
 <body>
+    <div class=" top-panel big">
+        <p id = "room-timer">00:00:00</p>
+    </div>
     <div  id = "long-text">
-        <div id="canvas">
-        
-            <% for( var i=0; i < parseInt(subjects.totalItems); i++) { %>
-            <div class='make-subject-out' >
-                <%= i+1 %>)
-                <div class='make-subject-main' id= 'subj<%= i %>'>
-                    <%= i+ parseInt(subjects.labelOffset) +1 %> 
+        <div id="canvas" data='<%= room._id %>'>
+            <% for( var i=0; i < parseInt(room.subjects.length); i++) { %>
+            <div class='make-subject-out' >   
+                <div class='make-subject-main targeted' id= 'subj<%= i %>' 
+                     data = '<%= room.subjects[i].id %>'
+                     style='background-color: <%= room.subjects[i].backColor %>; color: <%= room.subjects[i].textColor %>;' >
+                    <%= room.subjects[i].text %> 
                 </div>
             </div> 
             <% } %>
         </div>
     </div>
-    <div id = "left-panel">
-        <div id = "set-prop" class="hidden"><button id="prop-close" class="clickable">X</button><p>  Set properties</p>
-         <div style="margin: 2vw;">
-            <p id="set-prop-title"> Subject No. 1<p><br>
-            <label>Text : <input id="subject-text" type="text" name="Title" class="inputs"></label><br><br>
-            <label>Back : <input id="subject-color" type="color" name="backColor" class="inputs" value="#647896"></label>
-            <label>   Text : <input id="subject-tcolor" type="color" name="textColor" class="inputs" value="#aa8800"></label><br><br>
-          </div>  
-        </div>
- 
-        <h1 class = "logo"> LUCKY LOWS</h1>
-        <h2 id="round-title"><%= subjects.title %> - <%= subjects.totalItems %></h2>
-        <div id = "bottom-panel">
+    <div id = "left-panel"  <% if(user){ %> data='<%= user %><% } %> '>
+        <p id="room-title", class="big"> LL <%= room.title %> </p>
 
-            <label>Run cycles ( Enter -1 for infinit ) : <br><input id="counter" type="number" value = "10" name="counter" class="inputs" min="0"></label><br><br>
-            <button id="launch-btn" class="clickable btn">Launch</button><br><br>
-            <p><a id="cancel" class="clickable" href="/mystudio">
-              Back</a></p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+        <button id="lock-btn" class="clickable btn hidden" action="submit"> LOCK & LEAVE </button><br><br>
+
+        <h1 class = "logo"> LUCKY LOWS</h1>
+
+        <div id = "bottom-panel">
+        <% if (!user ) { %>
+            <p class= "light">To participate in LOCKY LOWS you should log in.</p>
+            <p><a id="cancel" class="clickable" href="/">Back</a></p>
+            <% } else { %>
+            <p class= "light">Select one and lock it.</p>
+            <p><a id="cancel" class="clickable" href="/dashboard">Back</a></p>  
+            <% } %>          
         </div>
+        <% if (!user ) { %>
+        
+        <div id="login-wrapper">
+            <p class= "light">Login with </p>
+            <a href="/auth/google">
+            <img id="google-logo" src="/images/google-logo.png">
+            </a>
+        </div>
+        <% } %>
     </div> 
-    <p id="data-holder" data-subject=<%= subjects %> ></p>
+
 </body>
 </html>
+        
+

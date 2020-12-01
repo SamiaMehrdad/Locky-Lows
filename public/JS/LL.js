@@ -1,5 +1,10 @@
+/* CLIENT SIDE for dashboard & main index
+
+*/
+
+/*--------------------- cache elements -----------------------------------*/
 const stickerEls = document.querySelectorAll(".sticker");
-console.log(stickerEls);
+// console.log(stickerEls);
 /*--------------------- event listeners -----------------------------------*/
 
 stickerEls.forEach(element => { 
@@ -21,7 +26,6 @@ function stickerClicked(e)
         {
             window.location.href = "/myrounds/enter/"+selectedElem.id.substring(1);
         }
-
 }
 
 /**-------------------------------

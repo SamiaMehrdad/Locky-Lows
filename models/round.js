@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//const user = require("./user");
-
 // Result Model
 var resultSchema = new Schema(
     {
@@ -35,8 +33,6 @@ var roundSchema = new Schema(
         create: Date,   // submitting first of this round
         due: Number,     // duration in days
         CDT: Number,
-       // CDT: { type: Number, 
-        //        default: () => {due+start - new Date();} } ,   // this value will be updated every minutes, till reaching zero
         counter: Number, // countdown timer for room run limitaion, also -1 means infinit
         desc: String,
         isActive: Boolean,
@@ -47,7 +43,5 @@ var roundSchema = new Schema(
     },
     {timestamps: true}
 );
-
-
 
 module.exports = mongoose.model("Round", roundSchema);

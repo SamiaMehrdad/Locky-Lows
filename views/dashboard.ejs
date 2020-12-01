@@ -1,13 +1,13 @@
 <%- include('./partials/formatter') %>
     <div id = "rooms-container"> 
-     <% VIPRounds.forEach( vip => { %>
+     <% VIPRounds.forEach( (vip, index) => { %>
         <div id="s<%= vip.id %>" class = "sticker">
             <div class = "sticker-info">
                 <p><%= vip.title %></p>
                 <p><%= vip.population %></p>
             </div>
             <div class = "sticker-timer">
-                <p><%= vip.CDT %></p>
+                <p><%= timerStrings[index] %></p>
                 <p id="label1">DAY      HRS      MNS</p>
             </div>
         </div> 

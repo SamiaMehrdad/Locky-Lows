@@ -17,25 +17,30 @@ function index( req, res )
   let coins = 0;
   let starts = [];
   let CDTs = [];
+  let myRounds = [];
   User.findById(req.user.id, (err, user) =>
-    {
-        coins = user.coins;
-    });
-//TODO: IMPORTANT here you should find all rounds that are active 
-//TODO: IMPORTANT   and user id appears in touchers of one of its subjects
-  Round.find({ owner: req.user.id }, function(err, rounds)
   {
-     if(!err)
-     {
-        rounds.forEach(round => { 
-          starts.push( util.shortDate(round.start)); 
-          CDTs.push( util.getCDT(round.CDT));
-          })
-       // console.log("Round index coins --->", coins );
-        res.render('../views/myrounds', { balance: coins , rounds, starts, CDTs  });
-     }
-  });
+    coins = user.coins;
+// finding all rounds that are active and my user appears in 
+// Touchers of one of its Subjects
 
+    Round.find({}, (err, rounds) =>
+    {
+      if(!err)
+      {
+        for(const round of rounds)
+          for(const subject of round.subjects )
+            for(const toucher of subject.touchers) // here I have my touchers to check
+              if( toucher.toString() === user._id.toString() )
+              { 
+                myRounds.push(round);
+                starts.push(util.shortDate(round.start));
+                CDTs.push( util.getCDT( round.CDT ));
+              }
+        res.render('../views/myrounds', { balance: coins,myRounds, starts, CDTs  });
+      }
+     });
+  });
 }
 
 /*******************************
@@ -44,10 +49,17 @@ function index( req, res )
  *******************************/
 function enter( req, res )
 {
-  console.clear();
-    console.log(req.params);
-    console.log(req.body);
-    res.send("YOU ENTERED THE ROOM ");
+    let roomId = req.params.id;
+    //user is not defined if no user is logged in
+    // find round by id
+    Round.findById(roomId, (err,room) => 
+    {
+      // and show the room for founded round
+      if(!err)
+      {
+        res.render('../views/room', {user:req.user, room});
+      }
+    });
 }
 
 /*******************************
@@ -56,7 +68,29 @@ function enter( req, res )
  *******************************/
 function engage( req, res )
 {
+  // req.body.user is a String, so needs to extrct id
+let uId = req.body.user.split(',')[0].split(' ')[3];
+
+ Round.findById(req.body.round, (err, round)=>
+  {
+    for(const subject of round.subjects )
+              if( subject._id.toString() === req.body.sId.toString() )
+              { 
+                console.log("ENGAGING--> ",req.body.sId, " Of---->", round._id);
+                subject.touchers.push(uId);
+                round.save( () =>res.redirect("/myrounds") );
+              }
     
+   });
+
+// Round.findOne({
+//   'subjects._id': req.body.sId,
+// })
+// .then( (round) =>{
+
+// } )
+
+// res.redirect("/myrounds");
 }
 
 /*******************************

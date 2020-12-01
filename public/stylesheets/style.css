@@ -140,6 +140,7 @@ p .material-icons{
   border: 1px solid #478;
   transition: all .2s;
   text-align: center;
+  outline: none;
  }
 
  .btn:hover{
@@ -212,16 +213,26 @@ color:var(--light);
 #messages{
 
 }
-#fader{
-  background-image: linear-gradient(var(--back), var(--back),  rgb(0,0,0,0));
+.top-panel{
   position: fixed;
   font-size: min(24px , 1.7vw);
   line-height: 30px;
   right: 10%;
   top: 0;
   width: 50%;
-  height: 60%;
   z-index: 2;
+  height: 10%;
+  /* background-color: var(--back); */
+}
+.fader{
+  background-image: linear-gradient(var(--back), var(--back),  rgb(0,0,0,0));
+  height: 60%;
+}
+.big{
+ font-size: min(80px , 3vw);
+ text-align: center;
+ font-weight: bolder;
+ color: #052;
 }
 #top-slogan{
   display: inline-block;
@@ -332,6 +343,12 @@ color:var(--light);
 
 .targeted{
   filter: none;
+}
+
+.selected{
+  box-shadow: 0 0 3vw #0f0;
+  border: 3px solid #9f9;
+  transition: all .2s;
 }
 
 #set-prop{

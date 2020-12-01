@@ -24,7 +24,7 @@ function index( req, res, next )
 
     User.findById(req.user.id, (err, user) => {
         coins = user.coins;
-    });
+    
 
     Round.find({ owner: req.user.id }, function(err, rounds)
     {
@@ -37,6 +37,7 @@ function index( req, res, next )
        // console.log("Round index coins --->", coins );
         res.render('../views/mystudio', { balance: coins , rounds, starts, CDTs  });
      }
+    });
     });
 }
 
@@ -73,6 +74,7 @@ function create(req, res, next)
             title: req.body.title,
             fee: parseInt(req.body.fee),
             start: new Date(),
+            CDT: parseInt(req.body.due) * 24*3600000,
             due: parseInt(req.body.due),
             counter: parseInt(req.body.counter),
             desc: req.body.desc,

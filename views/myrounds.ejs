@@ -10,18 +10,18 @@
 </head>
 <body>
     <div  id = "long-text">
-        <% if(rounds.length) { %>
+        <% if(myRounds.length) { %>
         <table id="rounds-table">
             <tr>
                 <th>Start</th><th>Title</th><th>Count down</th><th>Population</th><th>Rewards</th>
             </tr>
-            <% rounds.forEach((round, index) => { %>
+            <% myRounds.forEach((round, index) => { %>
             <tr> 
               <td><%= starts[index] %></td>
               <td><%= round.title %></td>
               <td><%= CDTs[index] %></td>
-              <td><%= round.Population %></td>
-              <td>1210</td>
+              <td><%= round.population %></td>
+              <td>..</td>
             </tr>   
             <% }); %>
         </table>
