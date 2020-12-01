@@ -1,4 +1,4 @@
-# Locky Lows
+# Lucky Lows
 ## Where the most unlikables get the most rewards!
 ---
 ### Concept:
@@ -20,7 +20,7 @@ You can find Locky Lows source code on Github.
 *[Locky Lows source code:](https://github.com/SamiaMehrdad/Locky-Lows)*
 
 if you want to take it a try, you can run last version here:
-*[Locky Lows runing:](https://github.com/SamiaMehrdad/Locky-Lows)*
+*[Locky Lows runing:](https://lockylows.herokuapp.com)*
 
 ## Technical aspects :
  ### Technology:
