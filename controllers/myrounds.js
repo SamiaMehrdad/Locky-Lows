@@ -82,15 +82,6 @@ let uId = req.body.user.split(',')[0].split(' ')[3];
               }
     
    });
-
-// Round.findOne({
-//   'subjects._id': req.body.sId,
-// })
-// .then( (round) =>{
-
-// } )
-
-// res.redirect("/myrounds");
 }
 
 /*******************************

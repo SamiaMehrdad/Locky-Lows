@@ -54,7 +54,7 @@ app.use(function(req, res) {
   res.status(404).send('Cant find that!');
 });
 
-
-setInterval( dataCtrl.refreshData, 60000);
+// calling main process engine every minute
+setInterval( dataCtrl.refreshData, 60000); 
 
 module.exports = app;

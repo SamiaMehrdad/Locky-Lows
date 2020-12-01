@@ -21,6 +21,14 @@ p .material-icons{
   margin: 0;
 }
 
+#arrow{
+      /* top: calc(100px + 10vh); */
+    position: absolute;
+
+    /* right: max(100px , calc( 20px + 15vw)); */
+    filter: drop-shadow(10px 20px 10px #777);
+    z-index: 500000;
+}
 #left-panel{
   position: fixed;
   display: block;
