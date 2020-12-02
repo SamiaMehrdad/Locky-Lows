@@ -1,3 +1,8 @@
+/*
+* Project: Lucky Lows
+* Module: DB configs
+* Comment: 
+-----------------------------------------------*/
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.DATABASE_URL,

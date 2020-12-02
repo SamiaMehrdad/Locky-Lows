@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Router
+* Target: myStudio
+* Comment: 
+-----------------------------------------------*/
 var router = require('express').Router();
 var myStudioCtrl = require('../controllers/mystudio');
 

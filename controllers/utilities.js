@@ -1,11 +1,18 @@
+/*
+* Project: Lucky Lows
+* Module: Controller 
+* Target: -
+* Comment: helper functions 
+-----------------------------------------------*/
 module.exports = {
  getCDT,
  shortDate,
 };
 
 /*******************************
-*
-*
+* convert time (milisconds) to suitable text DD-HH:MM
+* paaram: Number
+* return: String
  *******************************/
 function getCDT(milis) 
 {
@@ -22,8 +29,8 @@ function getCDT(milis)
 }
 
 /*******************************
-*
-*
+* short and sweet
+* reserving space for furture functionalities
  *******************************/
 function shortDate( date )
 {
@@ -32,8 +39,9 @@ function shortDate( date )
 }
 
 /*******************************
-*
-*
+* Check if user is engaged in this round or not
+* param: Round id
+* return: Boolean
  *******************************/
 function alreadyTouched( roundId )
 {

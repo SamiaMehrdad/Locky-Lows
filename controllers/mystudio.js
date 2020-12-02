@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Controller 
+* Target: mystudio
+* Comment:
+-----------------------------------------------*/
 const User = require('../models/user');
 const Round = require('../models/round');
 const util = require('./utilities');
@@ -10,7 +16,7 @@ module.exports = {
 };
 
 /*******************************
-*
+*  showing list of all owned rounds
 *
  *******************************/
 function index( req, res, next )
@@ -42,7 +48,7 @@ function index( req, res, next )
 }
 
 /*******************************
-*
+* showing new round making settings
 *
  *******************************/
 function newRound( req, res, next )
@@ -51,18 +57,18 @@ function newRound( req, res, next )
 }
 
 /*******************************
-*
+* showing studio main page
 *
  *******************************/
 function make( req, res )
 {
     let subjects = req.body;
-    console.log('studio -subjects---->', subjects);
+   // console.log('studio -subjects---->', subjects);
     res.render("../views/studio",{subjects});
 }
 
 /*******************************
-*
+* comming back from studio and saving new born round
 *
  *******************************/
 function create(req, res, next)
@@ -87,8 +93,6 @@ function create(req, res, next)
                 console.log("Error on database -->", err);
         });
     }
-    console.log(req.body, "<----CREATE");
-    console.log("user --->",req.user);
     console.log("REDIRECTING FROM mystudioCtrl.create.");
     res.render("../views/mystudio",{balance: 1000});
 }

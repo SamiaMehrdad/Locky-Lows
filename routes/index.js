@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Router
+* Target: Main page (/index : Not logged user)
+* Comment: 
+-----------------------------------------------*/
 var router = require('express').Router();
 var passport = require('passport');
 var indexCtrl = require('../controllers/index');

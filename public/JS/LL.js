@@ -1,6 +1,9 @@
-/* CLIENT SIDE for dashboard & main index
-
-*/
+/*
+* Project: Lucky Lows
+* Module: CLIENT SIDE
+* Target: dashboard & main index
+* Comment: 
+-----------------------------------------------*/
 
 /*--------------------- cache elements -----------------------------------*/
 const stickerEls = document.querySelectorAll(".sticker");

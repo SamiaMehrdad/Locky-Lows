@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: main server
+* Target: all
+* Comment: 1 minute timer for timing engin is defined here
+-----------------------------------------------*/
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -43,7 +49,7 @@ app.use(passport.session());
 
 // mount all routes with appropriate base paths
 app.use('/', require('./routes/index') );
-app.use('/', require('./routes/dashboard') );
+app.use('/dashboard', require('./routes/index') );
 app.use('/mystudio', require('./routes/mystudio') );
 app.use('/settings', require('./routes/settings') );
 app.use('/myrounds', require('./routes/myrounds') );
@@ -55,6 +61,7 @@ app.use(function(req, res) {
 });
 
 // calling main process engine every minute
-setInterval( dataCtrl.refreshData, 60000); 
+// located in index controller
+setInterval( dataCtrl.timingProcess, 60000); 
 
 module.exports = app;

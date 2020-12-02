@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Passport configs
+* Target: Oauth process
+* Comment: DB updating for logging in users happens here
+-----------------------------------------------*/
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 //Require your User Model here!

@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Controller 
+* Target: /myrounds
+* Comment: functions for process the rounds that user is engaged in.
+-----------------------------------------------*/
 const User = require('../models/user');
 const Round = require('../models/round');
 const util = require('./utilities');
@@ -9,7 +15,7 @@ module.exports = {
 };
 
 /*******************************
-*
+* showing list of all engaged rounds
 *
  *******************************/
 function index( req, res )
@@ -44,7 +50,7 @@ function index( req, res )
 }
 
 /*******************************
-*
+* rendering specific room
 *
  *******************************/
 function enter( req, res )
@@ -63,7 +69,7 @@ function enter( req, res )
 }
 
 /*******************************
-*
+* saving engaged round
 *
  *******************************/
 function engage( req, res )
@@ -85,7 +91,7 @@ let uId = req.body.user.split(',')[0].split(' ')[3];
 }
 
 /*******************************
-*
+* helping function to get user's LLcoins amount
 *
  *******************************/
  function getCoins( userId ) {
@@ -93,7 +99,6 @@ let uId = req.body.user.split(',')[0].split(' ')[3];
     {
         if(err)
             console.log("ERROR IN GETTING COINS FOR ", userId, err);
-        console.log("GETTING COINS", user.coins, " OF ", typeof(user.coins));    
         return (user.coins);
     });
  }

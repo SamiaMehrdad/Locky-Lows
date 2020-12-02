@@ -1,6 +1,9 @@
-/* CLIENT SIDE for dashboard & main index
-
-*/
+/*
+* Project: Lucky Lows
+* Module: CLIENT SIDE
+* Target: rooms ( rounds engaging )
+* Comment: 
+-----------------------------------------------*/
 
 /*--------------------- cache elements -----------------------------------*/
 const roomSubjects = document.querySelectorAll(".make-subject-main");

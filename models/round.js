@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Data model
+* Target: Whole
+* Comment: 
+-----------------------------------------------*/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

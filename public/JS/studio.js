@@ -1,6 +1,9 @@
-/* CLIENT SIDE for studio
-
-*/
+/*
+* Project: Lucky Lows
+* Module: CLIENT SIDE
+* Target: studio functionality
+* Comment: 
+-----------------------------------------------*/
 
 /*--------------------- cache elements -----------------------------------*/
 const studioSubjects = document.querySelectorAll(".make-subject-main");

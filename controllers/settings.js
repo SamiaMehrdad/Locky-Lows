@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Controller 
+* Target: /settings
+* Comment: functions for editing and updating user settings.
+-----------------------------------------------*/
 const User = require('../models/user');
 
 module.exports = {

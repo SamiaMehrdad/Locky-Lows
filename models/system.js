@@ -1,3 +1,9 @@
+/*
+* Project: Lucky Lows
+* Module: Data model
+* Target: Whole
+* Comment: Static system variables (single document)
+-----------------------------------------------*/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // User Model
