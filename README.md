@@ -17,10 +17,10 @@ In Lucky Lows there is many betting rounds that people can go and select whateve
 <br/><br/>
 
 You can find Lucky Lows source code on Github.
-*[Locky Lows source code:](https://github.com/SamiaMehrdad/Locky-Lows)*
+*[Lucky Lows source code:](https://github.com/SamiaMehrdad/Locky-Lows)*
 
 if you want to take it a try, you can try last version here:
-*[Locky Lows runing:](https://lockylows.herokuapp.com)*
+*[Lucky Lows runing:](https://lockylows.herokuapp.com)*
 
 ## Technical aspects :
  ### Technology:
