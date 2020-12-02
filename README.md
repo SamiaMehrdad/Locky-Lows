@@ -3,7 +3,7 @@
 ---
 ### Concept:
 
-In Locky Lows there is many betting rounds that people can go and select whatever they like by paying an amount of their LLcoins. Each round has a certain deadline timer that after dueing, results will be published. Main idea of Locky Lows is in calculating results. The subject that has been selected more, and is more popular is LOSER! and less popular one is the WINNER! So all payed LLcoins of losers multiple by 10 will be rewarded to the winners. Also users can make and run their own rounds, using LL studio. They will collect the commision of total coins that people may be rewarded at they rounds.
+In Lucky Lows there is many betting rounds that people can go and select whatever they like by paying an amount of their LLcoins. Each round has a certain deadline timer that after dueing, results will be published. Main idea of Lucky Lows is in the way of calculating the results. The subject which has been selected more, and is more popular will be the LOSER! and less popular one is the WINNER! So all payed LLcoins of losers multiple by 10 will be rewarded to the winners. Also users can make and run their own rounds, using LL studio. They will collect the commision of total LLcoins that people may be rewarded in their rounds.
 
 <br>
 
@@ -16,10 +16,10 @@ In Locky Lows there is many betting rounds that people can go and select whateve
 
 <br/><br/>
 
-You can find Locky Lows source code on Github.
+You can find Lucky Lows source code on Github.
 *[Locky Lows source code:](https://github.com/SamiaMehrdad/Locky-Lows)*
 
-if you want to take it a try, you can run last version here:
+if you want to take it a try, you can try last version here:
 *[Locky Lows runing:](https://lockylows.herokuapp.com)*
 
 ## Technical aspects :
@@ -38,5 +38,5 @@ if you want to take it a try, you can run last version here:
  - Implementing payment methods 
 
 ## Copyrights :
-Original concept, name and logo belongs to my self and all materials and resources which may be used for development are free to download and use. 
+Original concept, name and logo belongs to myself and all materials and resources which may be used for development are free to download and use. 
 
